@@ -1,4 +1,5 @@
-
+// JavaScript pour mettre à jour l'année automatiquement
+document.getElementById('year').textContent = new Date().getFullYear();
 /*  ------------------
     Remove Preloader
     ------------------  */
@@ -115,12 +116,12 @@ $(document).ready(function () {
     var map = new google.maps.Map(mapCanvas, mapOptions)
 
     var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(24.909439, 91.833800),
-            title:"Boots4 Office"
-        });
+        position: new google.maps.LatLng(24.909439, 91.833800),
+        title: "Boots4 Office"
+    });
 
-        // To add the marker to the map, call setMap();
-        marker.setMap(map);
+    // To add the marker to the map, call setMap();
+    marker.setMap(map);
 
     //google.maps.event.addDomListener(window, 'load', initialize);
 
@@ -129,9 +130,9 @@ $(document).ready(function () {
 
     $('.menu div.profile-btn').on('click', function () {
         $('.profile-page').fadeIn(1200);
-        setTimeout(function(){
+        setTimeout(function () {
             $('.count').each(function () {
-                $(this).prop('Counter',0).animate({
+                $(this).prop('Counter', 0).animate({
                     Counter: $(this).text()
                 }, {
                     duration: 7500,
@@ -146,7 +147,7 @@ $(document).ready(function () {
 
     $('.menu div.portfolio-btn').on('click', function () {
         $('.portfolio-page').fadeIn(1200);
-        setTimeout(function(){
+        setTimeout(function () {
             $('#projects').mixItUp();
         }, 100);
     });
@@ -157,9 +158,9 @@ $(document).ready(function () {
 
     $('.menu div.contact-btn').on('click', function () {
         $('.contact-page').fadeIn(1200);
-        setTimeout(function(){
-            google.maps.event.trigger(map,'resize');
-        },100);
+        setTimeout(function () {
+            google.maps.event.trigger(map, 'resize');
+        }, 100);
     });
 
 
@@ -189,17 +190,17 @@ $(document).ready(function () {
 
     /*----------------------script for owl carousel sponsors---------------------*/
 
-        $("#sponsor-list").owlCarousel({
-                 
-            autoPlay: 3000, //Set AutoPlay to 3 seconds
-            stopOnHover: true,
-            items : 3,
-            itemsDesktop: [1200,3],
-            itemsDesktopSmall: [991,3],
-            itemsTablet: [767,2],
-            itemsTabletSmall: [625,2],
-            itemsMobile: [479,1]
-        });
+    $("#sponsor-list").owlCarousel({
+
+        autoPlay: 3000, //Set AutoPlay to 3 seconds
+        stopOnHover: true,
+        items: 3,
+        itemsDesktop: [1200, 3],
+        itemsDesktopSmall: [991, 3],
+        itemsTablet: [767, 2],
+        itemsTabletSmall: [625, 2],
+        itemsMobile: [479, 1]
+    });
 
 
 
@@ -215,6 +216,31 @@ $(document).ready(function () {
     });
 
 
-    
+
 
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    new Typed('#typed-element', {
+        strings: ['Designer', 'Developer'],
+        typeSpeed: 50, // Vitesse de frappe
+        backSpeed: 30, // Vitesse de suppression
+        loop: true,    // Pour boucler l'animation
+        backDelay: 1500, // Temps d'attente avant suppression
+        showCursor: false, // Désactive le curseur clignotant
+    });
+});
+
+function initMap() {
+    var antananarivo = { lat: -18.8792, lng: 47.5079 }; // Coordonnées de Antananarivo
+    var map = new google.maps.Map(document.getElementById('map-canvas'), {
+        zoom: 12, // Niveau de zoom
+        center: antananarivo // Centrage de la carte
+    });
+    var marker = new google.maps.Marker({
+        position: antananarivo,
+        map: map,
+        title: 'Antananarivo, Madagascar'
+    });
+}
+
