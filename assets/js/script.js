@@ -1,10 +1,8 @@
-// JavaScript pour mettre à jour l'année automatiquement
-document.getElementById('year').textContent = new Date().getFullYear();
 /*  ------------------
     Remove Preloader
     ------------------  */
 
-$(window).load(function () {
+$(window).on('load', function () {
     $('#preloader').delay(350).fadeOut('slow', function () {
         $('.profile-page, .portfolio-page, .service-page, .contact-page').hide();
     });
@@ -100,33 +98,7 @@ $(document).ready(function () {
 
     });
 
-
-
-
-
-
-
-    var mapCanvas = document.getElementById('map-canvas');
-    var mapOptions = {
-        center: new google.maps.LatLng(24.909439, 91.833800),
-        zoom: 16,
-        scrollwheel: false,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    var map = new google.maps.Map(mapCanvas, mapOptions)
-
-    var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(24.909439, 91.833800),
-        title: "Boots4 Office"
-    });
-
-    // To add the marker to the map, call setMap();
-    marker.setMap(map);
-
-    //google.maps.event.addDomListener(window, 'load', initialize);
-
-
-    // Show Reletive Page Onclick
+    // Show Relative Page Onclick
 
     $('.menu div.profile-btn').on('click', function () {
         $('.profile-page').fadeIn(1200);
@@ -159,10 +131,13 @@ $(document).ready(function () {
     $('.menu div.contact-btn').on('click', function () {
         $('.contact-page').fadeIn(1200);
         setTimeout(function () {
-            google.maps.event.trigger(map, 'resize');
+            // Trigger a resize event on the map
+            var map = document.querySelector('#map-canvas');
+            if (map) {
+                map.dispatchEvent(new Event('resize'));
+            }
         }, 100);
     });
-
 
     // Close Button, Hide Menu
 
@@ -215,21 +190,41 @@ $(document).ready(function () {
         });
     });
 
-
-
-
 });
 
+// Code pour Leaflet
 document.addEventListener("DOMContentLoaded", function () {
-    new Typed('#typed-element', {
-        strings: ['Designer', 'Developer'],
-        typeSpeed: 50, // Vitesse de frappe
-        backSpeed: 30, // Vitesse de suppression
-        loop: true,    // Pour boucler l'animation
-        backDelay: 1500, // Temps d'attente avant suppression
-        showCursor: false, // Désactive le curseur clignotant
-    });
+    // Assure-toi que le conteneur de la carte existe
+    var mapElement = document.getElementById('map-canvas');
+    if (mapElement) {
+        // Initialiser la carte
+        var map = L.map('map-canvas').setView([-18.8792, 47.5079], 13); // Coordonnées d'Antananarivo
+
+        // Ajouter une couche de carte
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Ajouter un marqueur à Antananarivo
+        L.marker([-18.8792, 47.5079]).addTo(map)
+            .bindPopup('Antananarivo, Madagascar')
+            .openPopup();
+    } else {
+        console.error('Map container with ID "map-canvas" not found.');
+    }
 });
-
-
-
+document.addEventListener("DOMContentLoaded", function () {
+    // Vérifie si Typed est défini avant de l'utiliser
+    if (typeof Typed !== 'undefined') {
+        new Typed('#typed-element', {
+            strings: ['Designer', 'Developer'],
+            typeSpeed: 50, // Vitesse de frappe
+            backSpeed: 30, // Vitesse de suppression
+            loop: true,    // Pour boucler l'animation
+            backDelay: 2000, // Temps d'attente avant suppression
+            showCursor: false, // Désactive le curseur clignotant
+        });
+    } else {
+        console.error('Typed.js library is not loaded.');
+    }
+});
