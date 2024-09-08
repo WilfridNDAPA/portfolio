@@ -1434,7 +1434,3 @@ input#cfsubmit:hover {
 }
 
 /* Ajouter un style pour les icônes Font Awesome si nécessaire */
-#map-canvas {
-    height: 400px;
-    /* Ajustez la hauteur selon vos besoins */
-}

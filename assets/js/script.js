@@ -231,16 +231,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-function initMap() {
-    var antananarivo = { lat: -18.8792, lng: 47.5079 }; // Coordonnées de Antananarivo
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 12, // Niveau de zoom
-        center: antananarivo // Centrage de la carte
-    });
-    var marker = new google.maps.Marker({
-        position: antananarivo,
-        map: map,
-        title: 'Antananarivo, Madagascar'
-    });
-}
+
 
