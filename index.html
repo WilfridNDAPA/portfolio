@@ -238,7 +238,7 @@
 
                                         <!-- Skill Item -->
                                         <div class="progress">
-                                            <span class="skill"><span>Vue.js</span> <i class="val">70%</i></span>
+                                            <span class="skill"><span>Shopify</span> <i class="val">70%</i></span>
                                             <div class="progress-bar-wrap">
                                                 <div class="progress-bar" style="width: 70%;" role="progressbar"
                                                     aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
@@ -247,7 +247,7 @@
                                         <!-- End Skill Item -->
                                         <!-- Skill Item -->
                                         <div class="progress">
-                                            <span class="skill"><span>CodeIgniter</span> <i class="val">72%</i></span>
+                                            <span class="skill"><span>Laravel</span> <i class="val">72%</i></span>
                                             <div class="progress-bar-wrap">
                                                 <div class="progress-bar" style="width: 72%;" role="progressbar"
                                                     aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
@@ -269,7 +269,7 @@
 
                                         <!-- Skill Item -->
                                         <div class="progress">
-                                            <span class="skill"><span>WordPress/CMS</span> <i class="val">70%</i></span>
+                                            <span class="skill"><span>WordPress</span> <i class="val">70%</i></span>
                                             <div class="progress-bar-wrap">
                                                 <div class="progress-bar" style="width: 70%;" role="progressbar"
                                                     aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
@@ -1021,27 +1021,22 @@
                             <div class="row">
                                 <form id="contactForm" class="contact-form" method="post" action="php/contact-form.php">
 
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="form-group">
-                                            <input name="name" type="text" class="form-control" id="name"
-                                                required="required" placeholder="  Name">
+
+                                    <div class="row align-items-center">
+                                        <div class="col-md-4 col-12 mb-3 mb-md-0">
+                                            <button type="button" id="cfsubmit" class="btn btn-send w-100">
+                                                <i class="fas fa-paper-plane me-2"></i>
+                                                Say Hello
+                                            </button>
                                         </div>
-                                    </div>
-
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="form-group">
-                                            <input name="email" type="email" class="form-control" id="email"
-                                                required="required" placeholder="  Email">
+                                        <div class="col-md-8 col-12">
+                                            <div class="contact-response">
+                                                <div id="contactFormResponse" class="response-message w-100">
+                                                    <i class="fas fa-check-circle me-2"></i>
+                                                    Redirection vers votre client email en cours...
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-
-                                    <div class="col-md-12 col-sm-12">
-                                        <textarea name="massage" type="text" class="form-control" id="message" rows="5"
-                                            required="required" placeholder="  Message"></textarea>
-                                    </div>
-
-                                    <div class="col-md-4 col-xs-12">
-                                        <input type="submit" id="cfsubmit" class="btn btn-send" value="Say Hello">
                                     </div>
                                     <div id="contactFormResponse" class="col-md-8 col-xs-12"></div>
                                 </form>
@@ -1049,7 +1044,52 @@
                         </div>
                     </div>
                 </div>
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+                <script>
+                    document.getElementById('cfsubmit').addEventListener('click', function () {
+                        // Afficher le message de confirmation
+                        const responseDiv = document.getElementById('contactFormResponse');
+                        responseDiv.style.display = 'block';
 
+                        // Animation du bouton
+                        this.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            this.style.transform = 'scale(1)';
+                        }, 150);
+
+                        // Redirection vers l'email après un court délai
+                        setTimeout(() => {
+                            const subject = encodeURIComponent('Bonjour - Contact depuis votre site web');
+                            const body = encodeURIComponent('Bonjour,\n\nJe vous contacte depuis votre site web.\n\nCordialement,');
+                            const mailtoLink = `mailto:wilfridndapa@gmail.com?subject=${subject}&body=${body}`;
+
+                            window.location.href = mailtoLink;
+
+                            // Masquer le message après la redirection
+                            setTimeout(() => {
+                                responseDiv.style.display = 'none';
+                            }, 2000);
+                        }, 1000);
+                    });
+
+                    // Animation au chargement
+                    window.addEventListener('load', function () {
+                        const elements = document.querySelectorAll('.data');
+                        elements.forEach((el, index) => {
+                            setTimeout(() => {
+                                el.style.opacity = '0';
+                                el.style.transform = 'translateY(20px)';
+                                el.style.transition = 'all 0.6s ease';
+
+                                setTimeout(() => {
+                                    el.style.opacity = '1';
+                                    el.style.transform = 'translateY(0)';
+                                }, 100);
+                            }, index * 200);
+                        });
+                    });
+                </script>
                 <!-- ( D ) Footer -->
 
                 <div class="footer clearfix">
