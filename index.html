@@ -1,1135 +1,1431 @@
-<!doctype html>
-
-<html lang="en" class="no-js">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-
-    <!-- meta data -->
-
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name=viewport content="width=device-width, initial-scale=1">
-
-    <!-- title and favicon -->
-
-    <title>Wilfrid NDAPA</title>
-    <link rel="icon" href="assets/img/portfolio/icn.png">
-
-
-    <!--necessary stylesheets -->
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/ionicons.min.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/popup.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/owl.carousel.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/owl.theme.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link rel="shortcut icon" href="assets/images/icones.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDAPA Wilfrid - Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'gradient': 'gradient 15s ease infinite',
+                        'matrix': 'matrix 20s linear infinite',
+                        'orbit': 'orbit 8s linear infinite',
+                        'fadeIn': 'fadeIn 1s ease-out',
+                        'slideUp': 'slideUp 0.8s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-15px) rotate(5deg)' }
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': {
+                                boxShadow: '0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(147, 51, 234, 0.3)'
+                            },
+                            '50%': {
+                                boxShadow: '0 0 30px rgba(59, 130, 246, 0.8), 0 0 60px rgba(147, 51, 234, 0.6)'
+                            }
+                        },
+                        gradient: {
+                            '0%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                            '100%': { backgroundPosition: '0% 50%' }
+                        },
+                        matrix: {
+                            '0%': { transform: 'translateY(0)' },
+                            '100%': { transform: 'translateY(-100px)' }
+                        },
+                        orbit: {
+                            '0%': { transform: 'rotate(0deg) translateX(150px) rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg) translateX(150px) rotate(-360deg)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
 </head>
 
+<body class="">
+    <!-- Banner Section -->
+    <section class="min-h-screen relative overflow-hidden gradient-bg matrix-bg">
 
-<body>
+        <!-- Floating particles -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="particle animate-orbit" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+            <div class="particle animate-orbit" style="top: 60%; right: 20%; animation-delay: 2s;"></div>
+            <div class="particle animate-orbit" style="bottom: 30%; left: 30%; animation-delay: 4s;"></div>
+            <div class="particle animate-orbit" style="top: 40%; right: 10%; animation-delay: 6s;"></div>
 
-
-    <!-- Preloader -->
-
-    <div id="preloader">
-        <div class="loader">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-
-    <!-- home-page -->
-
-    <div class="home-page">
-
-        <!-- Introduction -->
-
-        <div class="introduction">
-            <img id="cover" alt="" src="assets/img/wilfrid.jpg">
-            <div class="mask">
+            <!-- Geometric shapes -->
+            <div class="absolute top-20 left-20 w-20 h-20 border border-blue-500/20 rotate-45 animate-pulse"></div>
+            <div class="absolute bottom-32 right-32 w-16 h-16 border border-purple-500/20 animate-float"></div>
+            <div
+                class="absolute top-1/2 left-10 w-12 h-12 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-full animate-pulse-glow">
             </div>
-            <div class="intro-content">
-                <div class="container" data-aos="fade-up" data-aos-delay="100">
-                    <h2>Wilfrid NDAPA</h2>
-                    <p>Web <span id="typed-element"></span></p>
-                </div>
-
-
-
-                <div class="social-media hidden-xs">
-                    <a href="https://www.facebook.com/Wilscarus/" class="fa fa-facebook" data-toggle="tooltip"
-                        title="Facebook"></a>
-
-
-                    <a href="https://www.linkedin.com/in/wilfrid-ndapa-7a2558251/" class="fa fa-linkedin"
-                        data-toggle="tooltip" title="Linkedin"></a>
-
-                </div>
+            <div class="absolute top-32 right-20 w-8 h-8 bg-black border border-cyan-500/30 rotate-12 animate-float">
             </div>
-
-            <!-- Social Media Icons [ END ] -->
+            <div class="absolute bottom-20 left-32 w-6 h-6 bg-black border border-pink-500/30 animate-pulse"></div>
         </div>
 
-        <!-- Navigation Menu -->
+        <!-- Main content container -->
+        <div class="relative z-20 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-5xl mx-auto">
 
-        <div class="menu">
-            <div class="profile-btn">
-                <img alt="" src="assets/img/about1.jpg" style="width:100%; height:100%;">
-                <div class="mask">
-                </div>
-                <div class="heading">
-                    <i class="ion-ios-people-outline hidden-xs"></i>
-                    <h2>About</h2>
-                </div>
-            </div>
-
-            <!-- Single Navigation Menu Button -->
-
-            <div class="portfolio-btn">
-                <img alt="" src="assets/img/portfolio1.jpg">
-                <div class="mask">
-                </div>
-                <div class="heading">
-                    <i class="ion-ios-briefcase-outline hidden-xs"></i>
-                    <h2>Works</h2>
-                </div>
-            </div>
-
-            <!-- Single Navigation Menu Button [ END ]  -->
-
-            <div class="service-btn">
-                <img alt="" src="assets/img/service1.jpg">
-                <div class="mask">
-                </div>
-                <div class="heading">
-                    <i class="ion-ios-lightbulb-outline hidden-xs"></i>
-                    <h2>Services</h2>
-                </div>
-            </div>
-
-            <!-- Single Navigation Menu Button [ END ]  -->
-
-            <div class="contact-btn">
-                <img alt="" src="assets/img/contact1.jpg">
-                <div class="mask">
-                </div>
-                <div class="heading">
-                    <i class="ion-ios-chatboxes-outline hidden-xs"></i>
-                    <h2>Contact</h2>
-                </div>
-            </div>
-
-            <!-- Single Navigation Menu Button [ END ]  -->
-
-        </div>
-    </div>
-
-    <!--
-    4 ) Close Button
-    -->
-
-    <div class="close-btn"></div>
-
-    <!--
-    5 ) Profile Page
-    -->
-
-    <div class="profile-page container-fluid page">
-        <div class="row">
-            <!--( a ) Profile Page Fixed Image Portion -->
-
-            <div class="image-container col-md-3 col-sm-12">
-                <div class="mask">
-                </div>
-                <div class="main-heading">
-                    <h1>About me</h1>
-                </div>
-            </div>
-
-            <!--( b ) Profile Page Content -->
-
-            <div class="content-container col-md-9 col-sm-12">
-
-                <!--( A ) Story of Glory -->
-
-                <div class="clearfix">
-                    <h2 class="small-heading">LEARN ABOUT ME</h2>
-                    <div class="row">
-                        <div class="col-lg-10 col-lg-offset-1 col-xs-10 col-xs-offset-1">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="video embed-responsive embed-responsive-4by3">
-                                        <div class="profil-image">
-                                            <img src="assets/img/profil.jpg" alt="">
-                                        </div>
-                                    </div>
+                <!-- Profile section with hologram effect -->
+                <div class="mb-12 animate-fadeIn">
+                    <div class="relative inline-block">
+                        <!-- Main avatar -->
+                        <div class="relative group">
+                            <div
+                                class="w-36 h-36 sm:w-44 sm:h-44 lg:w-52 lg:h-52 neo-border rounded-2xl flex items-center justify-center animate-float hologram">
+                                <div class="text-5xl sm:text-6xl lg:text-7xl font-pixel-primary text-white text-glow">
+                                    <img src="assets/images/wilfrid.jpg" alt="" srcset="">
                                 </div>
-
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="about-us-desc">
-                                        <p>
-                                            Hello, my name is Wilfrid NDAPA. I am a passionate full stack web developer
-                                            and web designer. My approach focuses on creating intuitive and engaging web
-                                            experiences that blend aesthetics and functionality. I strive to transform
-                                            ideas into digital solutions that meet user needs and project objectives.
-                                        </p>
-                                        <p>
-
-                                        </p>
-                                    </div>
-                                    <!-- Contact Info -->
-                                    <div class="contact-info">
-                                        <ul>
-                                            <li><i class="fa fa-envelope"></i> wilfridndapa@gmail.com</li>
-                                            <li><i class="fa fa-linkedin"></i> <a
-                                                    href="https://www.linkedin.com/in/wilfrid-ndapa-7a2558251/"
-                                                    target="_blank">Wilfrid NDAPA</a></li>
-                                            <li><i class="fa fa-phone"></i> +261 32 85 327 85 </li>
-                                            <li><i class="fa fa-map-marker"></i> Antananarivo, Madagascar</li>
-                                        </ul>
-                                    </div>
+                                <!-- Inner glow -->
+                                <div
+                                    class="absolute inset-2 rounded-xl bg-gradient-to-br from-cyan-400/20 via-blue-500/20 to-purple-600/20 animate-pulse-glow">
                                 </div>
                             </div>
+                            <!-- Outer glow ring -->
+                            <div
+                                class="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 opacity-30 blur-xl animate-pulse-glow -z-10">
+                            </div>
+                        </div>
+
+                        <!-- Status indicator -->
+                        <div
+                            class="absolute -bottom-2 -right-2 flex items-center gap-2 glass-effect px-4 py-2 rounded-full">
+                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                            <span class="text-xs font-pixel-code text-gray-300">ONLINE</span>
                         </div>
                     </div>
                 </div>
 
+                <!-- Name and titles -->
+                <div class="mb-12 animate-slideUp" style="animation-delay: 0.2s;">
+                    <h1
+                        class="text-3xl sm:text-5xl lg:text-6xl font-pixel-primary text-white mb-8 text-glow leading-tight">
+                        NDAPA
+                        <span
+                            class="block mt-2 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                            WILFRID
+                        </span>
+                    </h1>
 
-                <!--( B ) What Can I Do -->
-
-                <div class="clearfix">
-                    <h2 class="small-heading">SKILLS</h2>
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
-
-                            <div class="skills-container">
-                                <div class="row skills-content skills-animation">
-                                    <div class="col-lg-6">
-                                        <!-- Skill Item -->
-                                        <div class="progress">
-                                            <span class="skill"><span>HTML/CSS</span> <i class="val">80%</i></span>
-                                            <div class="progress-bar-wrap">
-                                                <div class="progress-bar" style="width: 80%;" role="progressbar"
-                                                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <!-- End Skill Item -->
-
-                                        <!-- Skill Item -->
-                                        <div class="progress">
-                                            <span class="skill"><span>JavaScript</span> <i class="val">68%</i></span>
-                                            <div class="progress-bar-wrap">
-                                                <div class="progress-bar" style="width: 68%;" role="progressbar"
-                                                    aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <!-- End Skill Item -->
-
-                                        <!-- Skill Item -->
-                                        <div class="progress">
-                                            <span class="skill"><span>Shopify</span> <i class="val">70%</i></span>
-                                            <div class="progress-bar-wrap">
-                                                <div class="progress-bar" style="width: 70%;" role="progressbar"
-                                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <!-- End Skill Item -->
-                                        <!-- Skill Item -->
-                                        <div class="progress">
-                                            <span class="skill"><span>Laravel</span> <i class="val">72%</i></span>
-                                            <div class="progress-bar-wrap">
-                                                <div class="progress-bar" style="width: 72%;" role="progressbar"
-                                                    aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <!-- End Skill Item -->
-                                    </div>
-
-                                    <div class="col-lg-6">
-                                        <!-- Skill Item -->
-                                        <div class="progress">
-                                            <span class="skill"><span>PHP</span> <i class="val">80%</i></span>
-                                            <div class="progress-bar-wrap">
-                                                <div class="progress-bar" style="width: 80%;" role="progressbar"
-                                                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <!-- End Skill Item -->
-
-                                        <!-- Skill Item -->
-                                        <div class="progress">
-                                            <span class="skill"><span>WordPress</span> <i class="val">70%</i></span>
-                                            <div class="progress-bar-wrap">
-                                                <div class="progress-bar" style="width: 70%;" role="progressbar"
-                                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <!-- End Skill Item -->
-
-                                        <!-- Skill Item -->
-                                        <div class="progress">
-                                            <span class="skill"><span>React js</span> <i class="val">60%</i></span>
-                                            <div class="progress-bar-wrap">
-                                                <div class="progress-bar" style="width: 60%;" role="progressbar"
-                                                    aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <!-- End Skill Item -->
-
-                                        <!-- Skill Item -->
-                                        <div class="progress">
-                                            <span class="skill"><span>Node Js</span> <i class="val">50%</i></span>
-                                            <div class="progress-bar-wrap">
-                                                <div class="progress-bar" style="width: 50%;" role="progressbar"
-                                                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <!-- End Skill Item -->
-
-
-                                    </div>
-                                </div>
-                            </div>
-
+                    <!-- Animated role tags -->
+                    <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8">
+                        <div class="glass-effect neo-border px-4 py-3 rounded-xl animate-slideUp"
+                            style="animation-delay: 0.4s;">
+                            <span class="text-cyan-400 font-pixel-code text-xs sm:text-sm font-semibold">
+                                &lt; WEB/CMS DEVELOPER /&gt;
+                            </span>
+                        </div>
+                        <div class="glass-effect neo-border px-4 py-3 rounded-xl animate-slideUp"
+                            style="animation-delay: 0.6s;">
+                            <span class="text-purple-400 font-pixel-code text-xs sm:text-sm font-semibold">
+                                { WEB_DESIGNER }
+                            </span>
+                        </div>
+                        <div class="glass-effect neo-border px-4 py-3 rounded-xl animate-slideUp"
+                            style="animation-delay: 0.8s;">
+                            <span class="text-pink-400 font-pixel-code text-xs sm:text-sm font-semibold">
+                                [ CREATIVE_CODE ]
+                            </span>
                         </div>
                     </div>
                 </div>
 
-                <!--
-                <div class="clearfix full-height">
-                    <h2 class="small-heading">MEET THE TEAM</h2>
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
-                            <div class="row">
-                                <div class="col-md-4 col-xs-12">
-                                    <div class="team-member-box center-block text-center">
-                                        <img src="assets/img/team_member1.jpg" class="img-responsive">
-                                        <h4 class="text-capitalize">loras tyrel</h4>
-                                        <p class="text-uppercase">founder and ceo</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-xs-12">
-                                    <div class="team-member-box center-block text-center">
-                                        <img src="assets/img/team_member2.jpg" class="img-responsive">
-                                        <h4 class="text-capitalize">john snow</h4>
-                                        <p class="text-uppercase">head of attorney</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-xs-12">
-                                    <div class="team-member-box center-block text-center">
-                                        <img src="assets/img/team_member3.jpg" class="img-responsive">
-                                        <h4 class="text-capitalize">sansa stark</h4>
-                                        <p class="text-uppercase">creative coder</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Enhanced description -->
+                <div class="mb-12 animate-slideUp" style="animation-delay: 1s;">
+                    <p
+                        class="text-sm sm:text-base lg:text-lg font-pixel-secondary text-gray-300 mb-6 max-w-4xl mx-auto leading-relaxed">
+                        WEB-CMS <span class="text-cyan-400 font-semibold">DEVELOPER</span>
+                        <br>TURNING IDEAS INTO POWERFUL WEB
+                    </p>
+                    <p class="text-xs sm:text-sm font-pixel-code text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                        TURNING <span class="text-purple-400 font-semibold">BUSINESS IDEAS</span> INTO
+                        DIGITAL EXPERIENCES THAT DELIVER RESULTS
+                    </p>
                 </div>
-				-->
 
-                <!--( D ) Footer -->
-
-                <div class="footer clearfix">
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <p class="copyright">Copyright &copy; <span id="year"></span><a href="">Wilfrid
-                                            NDAPA</a>
-                                    </p>
-                                </div>
-
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-
-                                </div>
-                            </div>
+                <!-- Enhanced CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 animate-slideUp"
+                    style="animation-delay: 1.2s;">
+                    <button
+                        class="group relative overflow-hidden px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 neo-border">
+                        <span class="relative z-10 flex items-center gap-3 font-pixel-code text-xs">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                </path>
+                            </svg>
+                            VIEW_MY_WORK
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </span>
+                        <!-- Shine effect -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700">
                         </div>
-                    </div>
+                    </button>
                 </div>
+
+                <!-- Enhanced Social links -->
+                <div class="flex justify-center gap-6 animate-slideUp" style="animation-delay: 1.4s;">
+
+                    <a href="https://www.linkedin.com/in/wilfrid-ndapa-7a2558251"
+                        class="group w-14 h-14 glass-effect neo-border rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:rotate-6">
+                        <svg class="w-6 h-6 text-gray-400 group-hover:text-blue-400 transition-colors"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+
+                    <a href="https://github.com/WilfridNDAPA"
+                        class="group w-14 h-14 glass-effect neo-border rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:rotate-6">
+                        <svg class="w-6 h-6 text-gray-400 group-hover:text-purple-400 transition-colors"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+
+                    <a href="mailto:wilfridndapa@gmail.com"
+                        class="group w-14 h-14 glass-effect neo-border rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:rotate-6">
+                        <svg class="w-6 h-6 text-gray-400 group-hover:text-pink-400 transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+
             </div>
         </div>
-    </div>
 
-
-
-
-
-    <div class="portfolio-page container-fluid page">
-
-        <div class="row">
-
-            <!--( a ) Portfolio Page Fixed Image Portion -->
-
-            <div class="image-container col-md-3 col-sm-12">
-                <div class="mask">
-                </div>
-                <div class="main-heading">
-                    <h1>Works</h1>
-                </div>
-            </div>
-
-            <!--( b ) Portfolio Page Content -->
-
-            <div class="content-container col-md-9 col-sm-12">
-
-                <!--( A ) Portfolio -->
-
-                <div class="portfolio clearfix full-height">
-                    <h2 class="small-heading">Works</h2>
-
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
-                            <div class="project-container">
-                                <div class="row">
-                                    <div class="project-controls">
-                                        <button class="filter" data-filter="all">All</button>
-                                        <button class="filter" data-filter=".web-developement">Web Development</button>
-                                        <button class="filter" data-filter=".web-design">Web Design</button>
-
-                                    </div>
-
-                                    <!-- Portfolio Control Buttons [ END ] -->
-
-                                    <div id="projects" class="projet-items clearfix">
-
-                                        <!-- Portfolio Image -->
-
-                                        <div class="col-lg-4 col-md-6 col-sm-4 col-xs-6 mix web-developement">
-                                            <div class="project">
-                                                <img src="assets/img/portfolio/thumbs/senat.PNG" alt="">
-                                                <div class="ovrly">
-                                                </div>
-                                                <div class="buttons">
-                                                    <a href="#" class="fa fa-link"></a>
-                                                    <a href="#portfolio-1" class="fa fa-search show-popup"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Popup Content -->
-
-                                        <div class="pop-up-box" id="portfolio-1">
-                                            <img alt="" src="assets/img/portfolio/thumbs/senat.PNG" class=" hidden-xs">
-                                            <div class="popup-content">
-                                                <h3>DESCRIPTION</h3>
-                                                <p>
-                                                    Web Application for Managing Legislative and International
-                                                    Interactions of the Senate.
-                                                    This web application is designed to optimize the management of the
-                                                    Senate's legislative and international interactions. It centralizes
-                                                    and efficiently manages information related to senators, legislative
-                                                    activities, international engagements, and official communications.
-                                                </p>
-                                                <h5>Technology</h5>
-                                                <ul>
-                                                    <li>Codeigniter,Node.JS</li>
-                                                </ul>
-                                                <a href="#">PREVIEW</a>
-                                            </div>
-                                        </div>
-
-                                        <!-- Single Portfolio Item [ END ] -->
-
-
-
-                                        <!-- Portfolio Image -->
-
-                                        <div class="col-lg-4 col-md-6 col-sm-4 col-xs-6 mix web-design">
-                                            <div class="project">
-                                                <img src="assets/img/portfolio/thumbs/fokotany.JPG" alt="">
-                                                <div class="ovrly">
-                                                </div>
-                                                <div class="buttons">
-                                                    <a href="#" class="fa fa-link"></a>
-                                                    <a href="#portfolio-2" class="fa fa-search show-popup"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Popup Content -->
-
-                                        <div class="pop-up-box" id="portfolio-2">
-                                            <img alt="" src="assets/img/portfolio/thumbs/fokotany.JPG"
-                                                class=" hidden-xs">
-                                            <div class="popup-content">
-                                                <h3>DESCRIPTION</h3>
-                                                <p>
-                                                    This project involves designing a mobile application in Figma, aimed
-                                                    at digitizing and centralizing all activities within a fokontany.
-                                                    The app allows users to view detailed information about local places
-                                                    such as restaurants and rental properties. Additionally, it offers
-                                                    features for users to leave reviews and share relevant information.
-                                                    The design ensures smooth navigation and a clear presentation of
-                                                    data for an optimal user experience.
-                                                </p>
-                                                <a href="#">PREVIEW</a>
-                                            </div>
-                                        </div>
-
-                                        <!-- Single Portfolio Item [ END ] -->
-
-                                        <!-- Single Portfolio Item [ END ] -->
-                                        <!-- Portfolio Image -->
-
-                                        <div class="col-lg-4 col-md-6 col-sm-4 col-xs-6 mix web-developement">
-                                            <div class="project">
-                                                <img src="assets/img/portfolio/thumbs/droit.JPG" alt="">
-                                                <div class="ovrly">
-                                                </div>
-                                                <div class="buttons">
-                                                    <a href="#" class="fa fa-link"></a>
-                                                    <a href="#portfolio-3" class="fa fa-search show-popup"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Popup Content -->
-
-                                        <div class="pop-up-box" id="portfolio-3">
-                                            <img alt="" src="assets/img/portfolio/thumbs/droit.JPG" class=" hidden-xs">
-                                            <div class="popup-content">
-                                                <h5>DESCRIPTION</h5>
-                                                <p>
-                                                    This website is dedicated to promoting the preservation of nature
-                                                    and encouraging actions to keep our cities clean. We provide
-                                                    resources, advice, and tools to help individuals and communities
-                                                    adopt eco-friendly practices, reduce their environmental footprint,
-                                                    and actively participate in local cleanup and waste management
-                                                    initiatives.
-                                                </p>
-                                                <h5>Technology</h5>
-                                                <ul>
-                                                    <li>Php</li>
-                                                </ul>
-                                                <a href="#">PREVIEW</a>
-                                            </div>
-                                        </div>
-
-                                        <!-- Single Portfolio Item [ END ] -->
-
-
-
-
-
-                                        <!-- Portfolio Image -->
-
-                                        <div class="col-lg-4 col-md-6 col-sm-4 col-xs-6 mix web-developement">
-                                            <div class="project">
-                                                <img src="assets/img/portfolio/thumbs/cosef.PNG" alt="">
-                                                <div class="ovrly">
-                                                </div>
-                                                <div class="buttons">
-                                                    <a href="#" class="fa fa-link"></a>
-                                                    <a href="#portfolio-4" class="fa fa-search show-popup"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Popup Content -->
-
-                                        <div class="pop-up-box" id="portfolio-4">
-                                            <img alt="" src="assets/img/portfolio/thumbs/cosef.PNG" class=" hidden-xs">
-                                            <div class="popup-content">
-                                                <h5>DESCRIPTION</h5>
-                                                <p>
-                                                    The COSEF site aims to ensure complete transparency and direct
-                                                    access to key information on political activities and public
-                                                    engagement. It facilitates a thorough understanding of contributions
-                                                    and political initiatives through a clear and detailed presentation
-                                                    of achievements and commitments.
-                                                </p>
-                                                <h5>Technology</h5>
-                                                <ul>
-                                                    <li>Codeigniter,Node.JS</li>
-                                                </ul>
-                                                <a href="#">PREVIEW</a>
-                                            </div>
-                                        </div>
-
-                                        <!-- Single Portfolio Item [ END ] -->
-
-
-
-                                        <!-- Portfolio Image -->
-
-                                        <div class="col-lg-4 col-md-6 col-sm-4 col-xs-6 mix web-design">
-                                            <div class="project">
-                                                <img src="assets/img/portfolio/thumbs/population.JPG" alt="">
-                                                <div class="ovrly">
-                                                </div>
-                                                <div class="buttons">
-                                                    <a href="#" class="fa fa-link"></a>
-                                                    <a href="#portfolio-5" class="fa fa-search show-popup"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Popup Content -->
-
-                                        <div class="pop-up-box" id="portfolio-5">
-                                            <img alt="" src="assets/img/portfolio/thumbs/population.JPG"
-                                                class=" hidden-xs">
-                                            <div class="popup-content">
-                                                <h3>DESCRIPTION</h3>
-                                                <p>
-                                                    This project involves designing a website for the Ministry of
-                                                    Population, created in Figma. The design aims to provide a clear and
-                                                    functional interface, allowing users to easily access information on
-                                                    the ministry's policies, services, and initiatives. The design
-                                                    includes sections for news, demographic data, support programs, and
-                                                    online forms. It ensures smooth navigation, effective information
-                                                    hierarchy, and an appealing visual presentation to enhance user
-                                                    experience and institutional communication.
-                                                </p>
-                                                <a href="#">PREVIEW</a>
-                                            </div>
-                                        </div>
-
-                                        <!-- Single Portfolio Item [ END ] -->
-                                        <!-- Portfolio Image -->
-
-                                        <div class="col-lg-4 col-md-6 col-sm-4 col-xs-6 mix web-developement">
-                                            <div class="project">
-                                                <img src="assets/img/portfolio/thumbs/intelli-sary.JPG" alt="">
-                                                <div class="ovrly">
-                                                </div>
-                                                <div class="buttons">
-                                                    <a href="#" class="fa fa-link"></a>
-                                                    <a href="#portfolio-6" class="fa fa-search show-popup"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Popup Content -->
-
-                                        <div class="pop-up-box" id="portfolio-6">
-                                            <img alt="" src="assets/img/portfolio/thumbs/intelli-sary.JPG"
-                                                class=" hidden-xs">
-                                            <div class="popup-content">
-                                                <h3>DESCRIPTION</h3>
-                                                <p>
-                                                    Intelli-Sary is an innovative website that transforms descriptions
-                                                    into images using artificial intelligence. This site allows users to
-                                                    submit detailed descriptions, which our AI then uses to generate
-                                                    corresponding images. Whether you need illustrations for creative
-                                                    projects, visual concepts, or simply want to see your ideas come to
-                                                    life, Intelli-Sary provides a simple and fast way to create unique
-                                                    and personalized visuals from your descriptions. Explore creative
-                                                    possibilities and let our technology bring your ideas to life.
-                                                </p>
-                                                <h5>Technology</h5>
-                                                <ul>
-                                                    <li>React js, Python</li>
-                                                </ul>
-                                                <a href="#">PREVIEW</a>
-                                            </div>
-                                        </div>
-
-                                        <!-- Single Portfolio Item [ END ] -->
-
-
-
-
-
-
-                                        <!-- Portfolio Image -->
-
-                                        <div class="col-lg-4 col-md-6 col-sm-4 col-xs-6 mix web-design">
-                                            <div class="project">
-                                                <img src="assets/img/portfolio/thumbs/environnement.JPG" alt="">
-                                                <div class="ovrly">
-                                                </div>
-                                                <div class="buttons">
-                                                    <a href="#" class="fa fa-link"></a>
-                                                    <a href="#portfolio-7" class="fa fa-search show-popup"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Popup Content -->
-
-                                        <div class="pop-up-box" id="portfolio-7">
-                                            <img alt="" src="assets/img/portfolio/thumbs/environnement.JPG"
-                                                class=" hidden-xs">
-                                            <div class="popup-content">
-                                                <h3>DESCRIPTION</h3>
-                                                <p>
-                                                    This project involves designing a website for the Ministry of
-                                                    Environment, created in Figma. The design aims to provide a clear
-                                                    and functional interface, enabling users to easily access
-                                                    information on environmental policies, conservation initiatives, and
-                                                    sustainability programs. The design includes sections for
-                                                    environmental news, reports, project updates, and interactive maps.
-                                                    It ensures smooth navigation, effective organization of content, and
-                                                    a visually appealing layout to enhance user engagement and promote
-                                                    environmental awareness.
-                                                </p>
-                                                <a href="#">PREVIEW</a>
-                                            </div>
-                                        </div>
-
-                                        <!-- Single Portfolio Item [ END ] -->
-
-
-
-                                        <!-- Portfolio Image -->
-
-                                        <div class="col-lg-4 col-md-6 col-sm-4 col-xs-6 mix web-developement">
-                                            <div class="project">
-                                                <img src="assets/img/portfolio/thumbs/vanilla.JPG" alt="">
-                                                <div class="ovrly">
-                                                </div>
-                                                <div class="buttons">
-                                                    <a href="https://www.rjdspicesvanilla.com/" class="fa fa-link"></a>
-                                                    <a href="#portfolio-8" class="fa fa-search show-popup"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Popup Content -->
-
-                                        <div class="pop-up-box" id="portfolio-8">
-                                            <img alt="" src="assets/img/portfolio/thumbs/vanilla.JPG"
-                                                class=" hidden-xs">
-                                            <div class="popup-content">
-                                                <h5>DESCRIPTION</h5>
-                                                <p>
-                                                    RJD Spices Vanilla is the go-to site for enthusiasts of exquisite
-                                                    flavors and rare spices. We offer a carefully curated selection of
-                                                    aromatic products, including top-quality vanilla beans, rare wild
-                                                    pepper, and pure vanilla powder. Each product is chosen for its
-                                                    exceptional quality and its ability to enhance your dishes and
-                                                    culinary creations with authentic and refined flavors. Browse our
-                                                    site to discover our exclusive offerings and be inspired by the art
-                                                    of vanilla and spices.
-                                                </p>
-                                                <h5>Technology</h5>
-                                                <ul>
-                                                    <li>WordPress</li>
-                                                </ul>
-                                                <a href="#">PREVIEW</a>
-                                            </div>
-                                        </div>
-
-                                        <!-- Single Portfolio Item [ END ] -->
-                                        <!-- Portfolio Image -->
-
-                                        <div class="col-lg-4 col-md-6 col-sm-4 col-xs-6 mix web-developement">
-                                            <div class="project">
-                                                <img src="assets/img/portfolio/thumbs/hydromel.JPG" alt="">
-                                                <div class="ovrly">
-                                                </div>
-                                                <div class="buttons">
-                                                    <a href="#" class="fa fa-link"></a>
-                                                    <a href="#portfolio-9" class="fa fa-search show-popup"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Popup Content -->
-
-                                        <div class="pop-up-box" id="portfolio-9">
-                                            <img alt="" src="assets/img/portfolio/thumbs/hydromel.JPG"
-                                                class=" hidden-xs">
-                                            <div class="popup-content">
-                                                <h5>DESCRIPTION</h5>
-                                                <p>
-                                                    This project involves creating a website dedicated to the sale of
-                                                    mead, showcasing a carefully curated selection of artisanal
-                                                    products. The site offers an intuitive user interface for exploring,
-                                                    discovering, and purchasing unique meads, with features such as
-                                                    search filters, a secure shopping cart, and detailed product
-                                                    information.
-                                                </p>
-                                                <h5>Technology</h5>
-                                                <ul>
-                                                    <li>Php</li>
-                                                </ul>
-                                                <a href="#">PREVIEW</a>
-                                            </div>
-                                        </div>
-
-                                        <!-- Single Portfolio Item [ END ] -->
-
-
-
-
-
-
-
-
-                                        <!-- Portfolio Image -->
-
-                                        <div class="col-lg-4 col-md-6 col-sm-4 col-xs-6 mix web-design">
-                                            <div class="project">
-                                                <img src="assets/img/portfolio/thumbs/taxi.JPG" alt="">
-                                                <div class="ovrly">
-                                                </div>
-                                                <div class="buttons">
-                                                    <a href="#" class="fa fa-link"></a>
-                                                    <a href="#portfolio-10" class="fa fa-search show-popup"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Popup Content -->
-
-                                        <div class="pop-up-box" id="portfolio-10">
-                                            <img alt="" src="assets/img/portfolio/thumbs/taxi.JPG" class=" hidden-xs">
-                                            <div class="popup-content">
-                                                <h3>DESCRIPTION</h3>
-                                                <p>
-                                                    This project involves designing a mobile application for urban
-                                                    transportation, created in Figma. The app provides an intuitive
-                                                    interface for planning and booking trips using various urban
-                                                    transportation options. The design includes features such as route
-                                                    search, online booking, real-time vehicle tracking, and reservation
-                                                    management. With smooth navigation and a clear presentation of
-                                                    information, the app aims to simplify urban travel and enhance the
-                                                    transportation experience for users.x
-                                                </p>
-                                                <a href="#">PREVIEW</a>
-                                            </div>
-                                        </div>
-
-
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Footer -->
-
-                <div class="footer clearfix">
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <p class="copyright">Copyright &copy; <span id="year"></span><a href="">Wilfrid
-                                            NDAPA</a>
-                                    </p>
-                                </div>
-
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Enhanced scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="glass-effect neo-border p-3 rounded-full">
+                <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
             </div>
         </div>
-    </div>
 
+    </section>
+    <!-- About Me Section -->
+    <section class="min-h-screen gradient-bg matrix-bg text-gray-200 flex items-center justify-center py-16 relative">
 
-
-
-    <!--
-    7 ) Service Page
-    -->
-
-    <div class="service-page container-fluid page">
-        <div class="row">
-            <!--( a ) Portfolio Page Fixed Image Portion -->
-
-            <div class="image-container col-md-3 col-sm-12">
-                <div class="mask">
-                </div>
-                <div class="main-heading">
-                    <h1>Service</h1>
-                </div>
-            </div>
-
-            <!--( b ) Portfolio Page Content -->
-
-            <div class="content-container col-md-9 col-sm-12">
-
-                <!--( A ) Portfolio -->
-
-                <div class="clearfix">
-                    <h2 class="small-heading">WHAT I DO BEST</h2>
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
-                            <div class="row">
-
-                                <div class="col-md-4 col-sm-6 col-xs-12">
-                                    <div class="faq-desc-item">
-                                        <div class="flip-container text-center"
-                                            ontouchstart="this.classList.toggle('hover');">
-                                            <div class="flipper">
-                                                <div class="front">
-                                                    <i class="fa fa-desktop"></i>
-                                                    <h5>Web Development</h5>
-                                                </div>
-                                                <div class="back">
-                                                    <!-- <i class="fa fa-lightbulb-o fa-fw"></i> -->
-                                                    <h5>Web Development</h5>
-                                                    <p>HTML, CSS, Javascript, PHP, jQuery, Bootstrap,Node
-                                                        Js,Vue.js,React Js,CodeIgniter</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4 col-sm-6 col-xs-12">
-                                    <div class="faq-desc-item">
-                                        <div class="flip-container text-center"
-                                            ontouchstart="this.classList.toggle('hover');">
-                                            <div class="flipper">
-                                                <div class="front">
-                                                    <i class="fa fa-paint-brush"></i>
-                                                    <center>
-                                                        <h5>Web Design</h5>
-                                                    </center>
-                                                </div>
-                                                <div class="back">
-                                                    <!-- <i class="fa fa-lightbulb-o fa-fw"></i> -->
-                                                    <h5>Web Design</h5>
-                                                    <p>Figma,Adobe XD,Sketch,Illustrator,Photoshop</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4 col-sm-6 col-xs-12">
-                                    <div class="faq-desc-item">
-                                        <div class="flip-container text-center"
-                                            ontouchstart="this.classList.toggle('hover');">
-                                            <div class="flipper">
-                                                <div class="front">
-                                                    <i class="fa fa-tools"></i>
-                                                    <h5>Technical Support </h5>
-                                                </div>
-                                                <div class="back">
-                                                    <!-- <i class="fa fa-paint-brush fa-fw"></i> -->
-                                                    <h5>Technical Support </h5>
-                                                    <p>Provides technical assistance to end-users on software, hardware,
-                                                        and network-related issues. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <h2 class="small-heading"></h2>
-
-
-
-                <!-- Footer -->
-
-                <div class="footer clearfix">
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <p class="copyright">Copyright &copy; <span id="year2"></span><a href="">Wilfrid
-                                            NDAPA</a>
-                                    </p>
-                                </div>
-
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Floating particles -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-20 w-2 h-2 bg-cyan-400 rounded-full animate-ping"
+                style="animation-delay: 0s;"></div>
+            <div class="absolute top-40 right-32 w-2 h-2 bg-purple-400 rounded-full animate-ping"
+                style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-32 left-40 w-2 h-2 bg-pink-400 rounded-full animate-ping"
+                style="animation-delay: 2s;"></div>
+            <div class="absolute bottom-20 right-20 w-2 h-2 bg-green-400 rounded-full animate-ping"
+                style="animation-delay: 3s;"></div>
         </div>
-    </div>
 
-    <!--
-    8 ) Contact Page
-    -->
+        <div class="max-w-6xl w-full mx-4 neon-border p-8 relative z-10">
 
-    <div class="contact-page container-fluid page">
-        <div class="row">
-            <!--( a ) Contact Page Fixed Image Portion -->
-
-            <div class="image-container col-md-3 col-sm-12">
-                <div class="mask">
+            <!-- Header -->
+            <div class="text-center mb-12 animate-fade-in-up">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-pixel-primary text-glow mb-4"
+                    style="color: var(--neon-blue);">
+                    ABOUT_ME.EXE
+                </h1>
+                <div class="flex items-center justify-center gap-4 mb-6">
+                    <div class="w-16 h-0.5 bg-gradient-to-r from-transparent to-cyan-400"></div>
+                    <div class="w-4 h-4 border-2 border-cyan-400 rotate-45"></div>
+                    <div class="w-16 h-0.5 bg-gradient-to-l from-transparent to-cyan-400"></div>
                 </div>
-                <div class="main-heading">
-                    <h1>contact</h1>
+                <p class="font-pixel-code text-gray-400 uppercase tracking-widest">
+                    PORTFOLIO_DATA.NDAPA_WILFRID
+                </p>
+            </div>
+
+
+
+            <!-- Content -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                <!-- Avatar Section -->
+                <div class="animate-fade-in-left">
+                    <div class="glass-morphism p-6 rounded-xl">
+
+
+                        <!-- Skills Progress -->
+                        <div class="space-y-4">
+                            <h3 class="font-pixel-primary text-sm text-cyan-400 mb-4">SKILL_LEVEL:</h3>
+
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-pixel-code text-xs text-gray-300">HTML/CSS/JS</span>
+                                    <span class="font-pixel-code text-xs text-cyan-400">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 h-2 rounded-sm overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-cyan-400 to-blue-500 w-4/5 animate-pulse">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-pixel-code text-xs text-gray-300">React js</span>
+                                    <span class="font-pixel-code text-xs text-purple-400">65%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 h-2 rounded-sm overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-purple-400 to-pink-500 w-3/5 animate-pulse">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-pixel-code text-xs text-gray-300">DESIGN</span>
+                                    <span class="font-pixel-code text-xs text-pink-400">65%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 h-2 rounded-sm overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-pink-400 to-red-500 w-3/5 animate-pulse">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-pixel-code text-xs text-gray-300">PHP</span>
+                                    <span class="font-pixel-code text-xs text-purple-400">70%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 h-2 rounded-sm overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-yellow-400 to-green-500 w-3/4 animate-pulse">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-pixel-code text-xs text-gray-300">Laravel / Codeigniter</span>
+                                    <span class="font-pixel-code text-xs text-purple-400">70%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 h-2 rounded-sm overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-blue-400 to-green-500 w-3/4 animate-pulse">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-pixel-code text-xs text-gray-300">Shopify</span>
+                                    <span class="font-pixel-code text-xs text-purple-400">70%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 h-2 rounded-sm overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-green-400 to-green-700 w-3/4 animate-pulse">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-pixel-code text-xs text-gray-300">WORDPRESS</span>
+                                    <span class="font-pixel-code text-xs text-purple-400">70%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 h-2 rounded-sm overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-blue-400 to-blue-700 w-3/4 animate-pulse">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-pixel-code text-xs text-gray-300">Node js</span>
+                                    <span class="font-pixel-code text-xs text-purple-400">50%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 h-2 rounded-sm overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-red-400 to-blue-700 w-3/6 animate-pulse">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Text Section -->
+                <div class="lg:col-span-2 space-y-6 animate-fade-in-right" style="animation-delay: 0.4s;">
+                    <div class="glass-morphism p-6 rounded-xl hover-glow">
+                        <h2 class="text-xl sm:text-2xl font-pixel-primary text-glow mb-4"
+                            style="color: var(--neon-blue);">
+                            SYSTEM.PROFILE
+                        </h2>
+                        <div class="font-pixel-code text-gray-300 leading-relaxed space-y-4">
+                            <p>
+
+                                > STATUS: <span class="text-green-400">Web Developer / Web Designer</span><br>
+                                > LOCATION: <span class="text-purple-400">Antananarivo,
+                                    Madagascar</span>
+                            </p>
+                            <p>
+                                ACTIVE SPECIALIZATIONS:<br>
+                                • <span class="text-cyan-400">Web Development</span><br>
+                                • <span class="text-purple-400">UI/UX Design</span><br>
+                                • <span class="text-pink-400">CMS & E-Commerce Solutions</span>
+                            </p>
+                            <p class="text-gray-400">
+                                MISSION: I am a passionate full stack web developer and web designer. My approach
+                                focuses on creating intuitive and engaging web experiences that blend aesthetics and
+                                functionality. I strive to transform ideas into digital solutions that meet user needs
+                                and project objectives.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Section -->
+                    <div class="glass-morphism p-6 rounded-xl hover-glow">
+                        <h3 class="text-lg font-pixel-primary text-glow mb-6" style="color: var(--neon-purple);">
+                            CONTACT_CHANNELS
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <a href="mailto:wilfridndapa@gmail.com" class="contact-card p-4 rounded-lg block">
+                                <div class="flex items-center space-x-3">
+                                    <div
+                                        class="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-sm flex items-center justify-center">
+                                        <span class="text-xs font-pixel-primary text-white">@</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-pixel-code text-xs text-gray-400">EMAIL</div>
+                                        <div class="font-pixel-code text-sm text-cyan-400">wilfridndapa@gmail.com</div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <div class="contact-card p-4 rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <div
+                                        class="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-sm flex items-center justify-center">
+                                        <span class="text-xs font-pixel-primary text-white">📍</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-pixel-code text-xs text-gray-400">LOCATION</div>
+                                        <div class="font-pixel-code text-sm text-green-400">MADAGASCAR</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="https://wa.me/261328532785" target="_blank"
+                                class="contact-card p-4 rounded-lg block">
+                                <div class="flex items-center space-x-3">
+                                    <div
+                                        class="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-sm flex items-center justify-center">
+                                        <span class="text-xs font-pixel-primary text-white">W</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-pixel-code text-xs text-gray-400">WHATSAPP</div>
+                                        <div class="font-pixel-code text-sm text-green-400">+261328532785</div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/wilfrid-ndapa-7a2558251" target="_blank"
+                                class="contact-card p-4 rounded-lg block">
+                                <div class="flex items-center space-x-3">
+                                    <div
+                                        class="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded-sm flex items-center justify-center">
+                                        <span class="text-xs font-pixel-primary text-white">in</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-pixel-code text-xs text-gray-400">LINKEDIN</div>
+                                        <div class="font-pixel-code text-sm text-blue-400">Wilfrid NDAPA</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!--( b ) Contact Page Content -->
-
-            <div class="content-container col-md-9 col-sm-12">
-
-                <!--( A ) Contact Form -->
-
-                <div class="clearfix full-height">
-                    <h2 class="small-heading">COME IN TOUCH</h2>
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
-                            <div class="contact-info">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="data">
-                                            <i class="fa fa-map-marker"></i>
-                                            <span>
-                                                Antananarivo,Madagascar<br>
-                                            </span>
-                                        </div>
-
-                                        <div class="data">
-                                            <i class="fa fa-envelope"></i>
-                                            <span>
-                                                wilfridndapa@gmail.com
-                                            </span>
-                                        </div>
-
-                                        <div class="data">
-                                            <i class="fa fa-phone"></i>
-                                            <span>
-                                                +261 32 85 327 85
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div id="map-canvas"></div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="row">
-                                <form id="contactForm" class="contact-form" method="post" action="php/contact-form.php">
-
-
-                                    <div class="row align-items-center">
-                                        <div class="col-md-4 col-12 mb-3 mb-md-0">
-                                            <button type="button" id="cfsubmit" class="btn btn-send w-100">
-                                                <i class="fas fa-paper-plane me-2"></i>
-                                                Say Hello
-                                            </button>
-                                        </div>
-                                        <div class="col-md-8 col-12">
-                                            <div class="contact-response">
-                                                <div id="contactFormResponse" class="response-message w-100">
-                                                    <i class="fas fa-check-circle me-2"></i>
-                                                    Redirection vers votre client email en cours...
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="contactFormResponse" class="col-md-8 col-xs-12"></div>
-                                </form>
-                            </div>
-                        </div>
+            <!-- Footer -->
+            <div class="mt-12 text-center animate-fade-in-up" style="animation-delay: 0.6s;">
+                <div class="glass-morphism p-6 rounded-xl inline-block">
+                    <p class="font-pixel-code text-gray-400 mb-2">
+                        > SYSTEM_STATUS: READY_FOR_NEW_CHALLENGES
+                    </p>
+                    <div class="flex items-center justify-center gap-2">
+                        <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+                        <span class="font-pixel-primary text-xs text-cyan-400">ALWAYS_LEARNING</span>
+                        <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                        <span class="font-pixel-primary text-xs text-purple-400">INNOVATING</span>
+                        <div class="w-2 h-2 bg-pink-400 rounded-full animate-pulse"></div>
+                        <span class="font-pixel-primary text-xs text-pink-400">SHARING</span>
                     </div>
                 </div>
-                <script
-                    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-                <script>
-                    document.getElementById('cfsubmit').addEventListener('click', function () {
-                        // Afficher le message de confirmation
-                        const responseDiv = document.getElementById('contactFormResponse');
-                        responseDiv.style.display = 'block';
+            </div>
 
-                        // Animation du bouton
-                        this.style.transform = 'scale(0.95)';
-                        setTimeout(() => {
-                            this.style.transform = 'scale(1)';
-                        }, 150);
+        </div>
+    </section>
 
-                        // Redirection vers l'email après un court délai
-                        setTimeout(() => {
-                            const subject = encodeURIComponent('Bonjour - Contact depuis votre site web');
-                            const body = encodeURIComponent('Bonjour,\n\nJe vous contacte depuis votre site web.\n\nCordialement,');
-                            const mailtoLink = `mailto:wilfridndapa@gmail.com?subject=${subject}&body=${body}`;
 
-                            window.location.href = mailtoLink;
+    <!-- Resume Section -->
+    <!-- SECTION: MY RESUME -->
+    <section id="resume" class=" text-gray-200 py-16 px-4 sm:px-8 lg:px-16 gradient-bg matrix-bg">
 
-                            // Masquer le message après la redirection
-                            setTimeout(() => {
-                                responseDiv.style.display = 'none';
-                            }, 2000);
-                        }, 1000);
-                    });
+        <div class="max-w-6xl mx-auto">
+            <!-- Title -->
+            <h2
+                class="text-4xl sm:text-5xl font-bold text-center mb-12 tracking-widest text-green-400 font-pixel-primary">
+                MY_RESUME.EXE</h2>
 
-                    // Animation au chargement
-                    window.addEventListener('load', function () {
-                        const elements = document.querySelectorAll('.data');
-                        elements.forEach((el, index) => {
-                            setTimeout(() => {
-                                el.style.opacity = '0';
-                                el.style.transform = 'translateY(20px)';
-                                el.style.transition = 'all 0.6s ease';
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- WORK EXPERIENCE -->
+                <div class="mt-16">
+                    <h3
+                        class="text-2xl font-semibold mb-6 border-b-2 border-green-400 pb-2 text-center font-pixel-secondary">
+                        Work Experience
+                    </h3>
+                    <ul class="space-y-6 font-pixel-code">
+                        <!-- Shopify Developer -->
+                        <li class="border-l-4 border-green-400 pl-4">
+                            <p class="font-bold text-lg">Shopify Developer – Freelance</p>
+                            <p class="text-gray-400 text-sm">2024 - 2025 | Antananarivo, Madagascar</p>
+                            <p class="mt-2 text-gray-300">
+                                Creation and customization of Shopify stores for local and international clients.<br>
+                                Theme integration and modification using Liquid language.
+                            </p>
+                        </li>
 
-                                setTimeout(() => {
-                                    el.style.opacity = '1';
-                                    el.style.transform = 'translateY(0)';
-                                }, 100);
-                            }, index * 200);
-                        });
-                    });
-                </script>
-                <!-- ( D ) Footer -->
+                        <!-- Laravel Developer -->
+                        <li class="border-l-4 border-green-400 pl-4">
+                            <p class="font-bold text-lg">Web Developer (Laravel) – Freelance</p>
+                            <p class="text-gray-400 text-sm">2025 | Antananarivo, Madagascar</p>
+                            <p class="mt-2 text-gray-300">
+                                Full development of websites using the Laravel framework.<br>
+                                Contracted for private clients to build custom web solutions.
+                            </p>
+                        </li>
 
-                <div class="footer clearfix">
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <p class="copyright">Copyright &copy; <span id="year"></span><a href="">Wilfrid
-                                            NDAPA</a>
-                                    </p>
-                                </div>
+                        <!-- Web Development Intern -->
+                        <li class="border-l-4 border-green-400 pl-4">
+                            <p class="font-bold text-lg">Web Development Intern</p>
+                            <p class="text-gray-400 text-sm">2023 - 2024 | Senate, Antananarivo, Madagascar</p>
+                            <p class="mt-2 text-gray-300">
+                                Final year project: Developed a web application to manage senatorial activities.<br>
+                                Implemented authentication system, CRUD data management, and admin interface.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
 
-                                <div class="col-md-6 col-sm-12 col-xs-12">
+                <!-- EDUCATION -->
+                <div>
+                    <h3 class="font-pixel-secondary text-2xl font-semibold mb-6 border-b-2 border-green-400 pb-2">
+                        Education</h3>
+                    <ul class="space-y-6">
+                        <li class="border-l-4 border-green-400 pl-4">
+                            <p class="font-bold text-lg">Institut Supérieur Polytechnique de Madagascar</p>
+                            <p class="text-gray-400 text-sm">2025</p>
+                            <p class="mt-2 text-gray-300">Bachelor's Degree in Computer Science, Multimedia,
+                                Information
+                                Technology, Communication, and Artificial Intelligence</p>
+                        </li>
 
-                                </div>
-                            </div>
-                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CERTIFICATES -->
+            <div class="mt-16">
+                <h3
+                    class="font-pixel-secondary text-2xl font-semibold mb-6 border-b-2 border-green-400 pb-2 text-center">
+                    Certificates</h3>
+                <div class="font-pixel-code grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    <!-- Certificate 1 -->
+                    <div
+                        class="bg-gray-800 p-4 rounded-lg border-2 border-green-400 text-center hover:scale-105 transition-transform">
+                        <p class="font-bold">Professional Training</p>
+                        <p class="text-gray-400 text-sm mt-1">2023 - Orange Digital Center</p>
+                        <p class="text-gray-300 text-sm mt-2">Advanced training on the most used CMS in the world</p>
                     </div>
+
+                    <!-- Certificate 2 -->
+                    <div
+                        class="bg-gray-800 p-4 rounded-lg border-2 border-green-400 text-center hover:scale-105 transition-transform">
+                        <p class="font-bold">UX/UI Design Training Certificate</p>
+                        <p class="text-gray-400 text-sm mt-1">2025 - Orange Digital Center</p>
+                        <p class="text-gray-300 text-sm mt-2">Figma mastery for UI/UX design</p>
+                    </div>
+
+                    <!-- Certificate 3 -->
+                    <div
+                        class="bg-gray-800 p-4 rounded-lg border-2 border-green-400 text-center hover:scale-105 transition-transform">
+                        <p class="font-bold">Web Security Certification</p>
+                        <p class="text-gray-400 text-sm mt-1">2025 - Orange Digital Center</p>
+                        <p class="text-gray-300 text-sm mt-2">
+                            Analyze and fix common security vulnerabilities.<br>
+                            Implement HTTPS protocols, strengthened authentication, session management.<br>
+                            Secure websites using open-source tools.<br>
+                            Awareness of web security best practices for developers.
+                        </p>
+                    </div>
+
+                    <!-- Certificate 4 -->
+                    <div
+                        class="bg-gray-800 p-4 rounded-lg border-2 border-green-400 text-center hover:scale-105 transition-transform">
+                        <p class="font-bold">Advanced WordPress Certification</p>
+                        <p class="text-gray-400 text-sm mt-1">2025 - Orange Digital Center</p>
+                        <p class="text-gray-300 text-sm mt-2">Advanced training on WordPress for building complex
+                            websites</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <!-- Section Portfolio -->
+    <section
+        class="py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-900 to-black">
+        <div class="max-w-7xl mx-auto">
+            <!-- Titre principal -->
+            <div class="text-center mb-8 sm:mb-12 md:mb-16">
+                <h1 class="pixel-font title-responsive text-cyan-400 mb-4 sm:mb-6 glitch" id="mainTitle">
+                    > MES PROJETS_
+                </h1>
+                <div
+                    class="w-16 sm:w-24 md:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto mb-4 sm:mb-6 md:mb-8">
+                </div>
+                <p class="pixel-font text-xs sm:text-sm text-gray-300 max-w-xs sm:max-w-lg md:max-w-2xl mx-auto px-4">
+                    COLLECTION DE PROJETS DIGITAUX ET CRÉATIONS INTERACTIVES
+                </p>
+            </div>
+
+            <!-- Filtres -->
+            <div class="filter-buttons mb-8 sm:mb-10 md:mb-12 px-2">
+                <button onclick="filterProjects('all')"
+                    class="filter-btn pixel-font text-xs sm:text-sm bg-gray-800 hover:bg-cyan-400 hover:text-black px-3 sm:px-4 md:px-6 py-2 sm:py-3 pixel-border border-cyan-400 smooth-transition neon-glow focus-visible min-w-0 flex-shrink-0"
+                    data-filter="all" aria-label="Afficher tous les projets">
+                    TOUS
+                </button>
+                <button onclick="filterProjects('web')"
+                    class="filter-btn pixel-font text-xs sm:text-sm bg-gray-800 hover:bg-cyan-400 hover:text-black px-3 sm:px-4 md:px-6 py-2 sm:py-3 pixel-border border-cyan-400 smooth-transition focus-visible min-w-0 flex-shrink-0"
+                    data-filter="web" aria-label="Afficher les projets web">
+                    WEB
+                </button>
+                <!-- <button onclick="filterProjects('app')"
+                    class="filter-btn pixel-font text-xs sm:text-sm bg-gray-800 hover:bg-cyan-400 hover:text-black px-3 sm:px-4 md:px-6 py-2 sm:py-3 pixel-border border-cyan-400 smooth-transition focus-visible min-w-0 flex-shrink-0"
+                    data-filter="app" aria-label="Afficher les applications">
+                    APPS
+                </button>
+                <button onclick="filterProjects('game')"
+                    class="filter-btn pixel-font text-xs sm:text-sm bg-gray-800 hover:bg-cyan-400 hover:text-black px-3 sm:px-4 md:px-6 py-2 sm:py-3 pixel-border border-cyan-400 smooth-transition focus-visible min-w-0 flex-shrink-0"
+                    data-filter="game" aria-label="Afficher les jeux">
+                    JEUX
+                </button> -->
+                <button onclick="filterProjects('design')"
+                    class="filter-btn pixel-font text-xs sm:text-sm bg-gray-800 hover:bg-cyan-400 hover:text-black px-3 sm:px-4 md:px-6 py-2 sm:py-3 pixel-border border-cyan-400 smooth-transition focus-visible min-w-0 flex-shrink-0"
+                    data-filter="design" aria-label="Afficher les designs">
+                    DESIGN
+                </button>
+            </div>
+
+            <!-- Grille de projets -->
+            <div class="projects-grid" id="projectsGrid">
+
+
+                <!-- <article
+                    class="project-card bg-gray-900 pixel-border border-cyan-400 hover:border-purple-400 smooth-transition pixel-shadow group cursor-pointer"
+                    data-category="game" tabindex="0" role="button" aria-label="Voir le projet Retro Game">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&h=400&fit=crop"
+                            alt="Capture d'écran du jeu rétro"
+                            class="project-image w-full h-32 sm:h-40 md:h-48 object-cover smooth-transition"
+                            loading="lazy">
+                        <div class="absolute top-2 sm:top-4 right-2 sm:right-4">
+                            <span class="pixel-font text-xs bg-green-500 text-black px-1 sm:px-2 py-1">TERMINÉ</span>
+                        </div>
+                        <div class="project-overlay absolute inset-0 bg-cyan-400 opacity-0 smooth-transition"></div>
+                    </div>
+                    <div class="p-3 sm:p-4 md:p-6">
+                        <h3 class="pixel-font text-cyan-400 text-sm sm:text-base md:text-lg mb-2 sm:mb-3">RETRO GAME
+                        </h3>
+                        <p class="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Jeu rétro 8-bit
+                            développé en JavaScript avec des mécaniques arcade classiques</p>
+                        <div class="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
+                            <span class="pixel-font text-xs bg-purple-600 px-1 sm:px-2 py-1">JS</span>
+                            <span class="pixel-font text-xs bg-purple-600 px-1 sm:px-2 py-1">CANVAS</span>
+                            <span class="pixel-font text-xs bg-purple-600 px-1 sm:px-2 py-1">WEBGL</span>
+                        </div>
+                        <button
+                            class="pixel-font text-xs sm:text-sm text-cyan-400 hover:text-white pixel-border border-cyan-400 hover:bg-cyan-400 hover:text-black px-3 sm:px-4 py-2 smooth-transition w-full focus-visible">
+                            VOIR PROJET >
+                        </button>
+                    </div>
+                </article>
+
+            
+                <article
+                    class="project-card bg-gray-900 pixel-border border-cyan-400 hover:border-purple-400 smooth-transition pixel-shadow group cursor-pointer"
+                    data-category="app" tabindex="0" role="button" aria-label="Voir le projet Pixel Art App">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop"
+                            alt="Interface de l'application pixel art"
+                            class="project-image w-full h-32 sm:h-40 md:h-48 object-cover smooth-transition"
+                            loading="lazy">
+                        <div class="absolute top-2 sm:top-4 right-2 sm:right-4">
+                            <span class="pixel-font text-xs bg-yellow-500 text-black px-1 sm:px-2 py-1">EN COURS</span>
+                        </div>
+                        <div class="project-overlay absolute inset-0 bg-cyan-400 opacity-0 smooth-transition"></div>
+                    </div>
+                    <div class="p-3 sm:p-4 md:p-6">
+                        <h3 class="pixel-font text-cyan-400 text-sm sm:text-base md:text-lg mb-2 sm:mb-3">PIXEL ART APP
+                        </h3>
+                        <p class="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Application web de
+                            création de pixel art avec outils avancés</p>
+                        <div class="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
+                            <span class="pixel-font text-xs bg-purple-600 px-1 sm:px-2 py-1">REACT</span>
+                            <span class="pixel-font text-xs bg-purple-600 px-1 sm:px-2 py-1">CANVAS</span>
+                            <span class="pixel-font text-xs bg-purple-600 px-1 sm:px-2 py-1">REDUX</span>
+                        </div>
+                        <button
+                            class="pixel-font text-xs sm:text-sm text-cyan-400 hover:text-white pixel-border border-cyan-400 hover:bg-cyan-400 hover:text-black px-3 sm:px-4 py-2 smooth-transition w-full focus-visible">
+                            VOIR PROJET >
+                        </button>
+                    </div>
+                </article> -->
+
+                <!-- Projet 3 -->
+                <article class="project-card bg-gray-900 pixel-border border-cyan-400 hover:border-purple-400
+                     smooth-transition pixel-shadow group cursor-pointer" data-category="web" tabindex="0"
+                    role="button" aria-label="Voir le projet  Website">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/images/greenfocusfarm.png" alt="Site web "
+                            class="project-image w-full h-32 sm:h-40 md:h-48 object-cover smooth-transition"
+                            loading="lazy">
+                        <div class="absolute top-2 sm:top-4 right-2 sm:right-4">
+                            <span class="pixel-font text-xs bg-green-500 text-black px-1 sm:px-2 py-1">Completed</span>
+                        </div>
+                        <div class="project-overlay absolute inset-0 bg-cyan-400 opacity-0 smooth-transition"></div>
+                    </div>
+                    <div class="p-3 sm:p-4 md:p-6">
+                        <h3 class="pixel-font text-cyan-400 text-sm sm:text-base md:text-lg mb-2 sm:mb-3">Green Focus
+                            Farms
+                        </h3>
+                        <p class="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
+                            Built and configured Green Focus Farms’ Shopify store, handling theme customization, CMS
+                            integration, and full e-commerce setup</p>
+                        <div class="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
+                            <span class="pixel-font text-xs bg-purple-600 px-1 sm:px-2 py-1">Shopify</span>
+
+                        </div>
+                        <a href="https://www.greenfocusfarms.ca/">
+                            <button
+                                class="pixel-font text-xs sm:text-sm text-cyan-400 hover:text-white pixel-border border-cyan-400 hover:bg-cyan-400 hover:text-black px-3 sm:px-4 py-2 smooth-transition w-full focus-visible">
+                                SEE PROJECT>
+                            </button>
+                        </a>
+
+                    </div>
+                </article>
+                <article class="project-card bg-gray-900 pixel-border border-cyan-400 hover:border-purple-400
+                     smooth-transition pixel-shadow group cursor-pointer" data-category="web" tabindex="0"
+                    role="button" aria-label="Voir le projet  Website">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/images/scrapbooking.png" alt="Site web "
+                            class="project-image w-full h-32 sm:h-40 md:h-48 object-cover smooth-transition"
+                            loading="lazy">
+                        <div class="absolute top-2 sm:top-4 right-2 sm:right-4">
+                            <span class="pixel-font text-xs bg-green-500 text-black px-1 sm:px-2 py-1">Completed</span>
+                        </div>
+                        <div class="project-overlay absolute inset-0 bg-cyan-400 opacity-0 smooth-transition"></div>
+                    </div>
+                    <div class="p-3 sm:p-4 md:p-6">
+                        <h3 class="pixel-font text-cyan-400 text-sm sm:text-base md:text-lg mb-2 sm:mb-3">Scrapbooking
+                            Laurentides
+                        </h3>
+                        <p class="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
+                            Fixed critical translation bugs and optimized the Scrapbooking Laurentides Woocommerce site
+                            to ensure better user experience</p>
+                        <div class="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
+                            <span class="pixel-font text-xs bg-purple-600 px-1 sm:px-2 py-1">WordPress</span>
+
+
+                        </div>
+                        <a href="https://scrapbookinglaurentides.com/">
+                            <button
+                                class="pixel-font text-xs sm:text-sm text-cyan-400 hover:text-white pixel-border border-cyan-400 hover:bg-cyan-400 hover:text-black px-3 sm:px-4 py-2 smooth-transition w-full focus-visible">
+                                SEE PROJECT>
+                            </button>
+                        </a>
+
+                    </div>
+                </article>
+
+                <article class="project-card bg-gray-900 pixel-border border-cyan-400 hover:border-purple-400
+                     smooth-transition pixel-shadow group cursor-pointer" data-category="web" tabindex="0"
+                    role="button" aria-label="Voir le projet  Website">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/images/rebellesdesbois.png" alt="Site web "
+                            class="project-image w-full h-32 sm:h-40 md:h-48 object-cover smooth-transition"
+                            loading="lazy">
+                        <div class="absolute top-2 sm:top-4 right-2 sm:right-4">
+                            <span class="pixel-font text-xs bg-green-500 text-black px-1 sm:px-2 py-1">Completed</span>
+                        </div>
+                        <div class="project-overlay absolute inset-0 bg-cyan-400 opacity-0 smooth-transition"></div>
+                    </div>
+                    <div class="p-3 sm:p-4 md:p-6">
+                        <h3 class="pixel-font text-cyan-400 text-sm sm:text-base md:text-lg mb-2 sm:mb-3"> Rebelles des
+                            Bois
+                        </h3>
+                        <p class="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
+
+                            Integrated custom features on the Rebelles des Bois Shopify store based on client
+                            requirements including integration and synchronization of products between Shopify and Etsy
+                        </p>
+                        <div class="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
+                            <span class="pixel-font text-xs bg-purple-600 px-1 sm:px-2 py-1">Shopify</span>
+
+
+                        </div>
+                        <a href="https://rebellesdesbois.com/">
+                            <button
+                                class="pixel-font text-xs sm:text-sm text-cyan-400 hover:text-white pixel-border border-cyan-400 hover:bg-cyan-400 hover:text-black px-3 sm:px-4 py-2 smooth-transition w-full focus-visible">
+                                SEE PROJECT>
+                            </button>
+                        </a>
+
+                    </div>
+                </article>
+
+                <article class="project-card bg-gray-900 pixel-border border-cyan-400 hover:border-purple-400
+                     smooth-transition pixel-shadow group cursor-pointer" data-category="web" tabindex="0"
+                    role="button" aria-label="Voir le projet  Website">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/images/zipline.png" alt="Site web "
+                            class="project-image w-full h-32 sm:h-40 md:h-48 object-cover smooth-transition"
+                            loading="lazy">
+                        <div class="absolute top-2 sm:top-4 right-2 sm:right-4">
+                            <span class="pixel-font text-xs bg-green-500 text-black px-1 sm:px-2 py-1">Completed</span>
+                        </div>
+                        <div class="project-overlay absolute inset-0 bg-cyan-400 opacity-0 smooth-transition"></div>
+                    </div>
+                    <div class="p-3 sm:p-4 md:p-6">
+                        <h3 class="pixel-font text-cyan-400 text-sm sm:text-base md:text-lg mb-2 sm:mb-3"> MTL Zipline
+                        </h3>
+                        <p class="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
+
+
+                            Added new pages and integrated content on MTL Zipline’s Shopify store, improving the shop
+                            page structure and user experience
+                        </p>
+                        <div class="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
+                            <span class="pixel-font text-xs bg-purple-600 px-1 sm:px-2 py-1">Shopify</span>
+
+
+                        </div>
+                        <a href="https://www.mtlzipline.com/">
+                            <button
+                                class="pixel-font text-xs sm:text-sm text-cyan-400 hover:text-white pixel-border border-cyan-400 hover:bg-cyan-400 hover:text-black px-3 sm:px-4 py-2 smooth-transition w-full focus-visible">
+                                SEE PROJECT>
+                            </button>
+                        </a>
+
+                    </div>
+                </article>
+                <article class="project-card bg-gray-900 pixel-border border-cyan-400 hover:border-purple-400
+                     smooth-transition pixel-shadow group cursor-pointer" data-category="web" tabindex="0"
+                    role="button" aria-label="Voir le projet  Website">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/images/sophia.png" alt="Site web "
+                            class="project-image w-full h-32 sm:h-40 md:h-48 object-cover smooth-transition"
+                            loading="lazy">
+                        <div class="absolute top-2 sm:top-4 right-2 sm:right-4">
+                            <span class="pixel-font text-xs bg-green-500 text-black px-1 sm:px-2 py-1">Completed</span>
+                        </div>
+                        <div class="project-overlay absolute inset-0 bg-cyan-400 opacity-0 smooth-transition"></div>
+                    </div>
+                    <div class="p-3 sm:p-4 md:p-6">
+                        <h3 class="pixel-font text-cyan-400 text-sm sm:text-base md:text-lg mb-2 sm:mb-3"> Sophia
+                        </h3>
+                        <p class="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
+
+
+
+                            I built the e-commerce site Sophia on Odoo SaaS and currently manage the platform.
+                        </p>
+                        <div class="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
+                            <span class="pixel-font text-xs bg-purple-600 px-1 sm:px-2 py-1">Odoo</span>
+
+
+                        </div>
+                        <a href="https://www.sophia.yt/">
+                            <button
+                                class="pixel-font text-xs sm:text-sm text-cyan-400 hover:text-white pixel-border border-cyan-400 hover:bg-cyan-400 hover:text-black px-3 sm:px-4 py-2 smooth-transition w-full focus-visible">
+                                SEE PROJECT>
+                            </button>
+                        </a>
+
+                    </div>
+                </article>
+                <article class="project-card bg-gray-900 pixel-border border-cyan-400 hover:border-purple-400
+                     smooth-transition pixel-shadow group cursor-pointer" data-category="web" tabindex="0"
+                    role="button" aria-label="Voir le projet  Website">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/images/refletbeaute.png" alt="Site web "
+                            class="project-image w-full h-32 sm:h-40 md:h-48 object-cover smooth-transition"
+                            loading="lazy">
+                        <div class="absolute top-2 sm:top-4 right-2 sm:right-4">
+                            <span class="pixel-font text-xs bg-green-500 text-black px-1 sm:px-2 py-1">Completed</span>
+                        </div>
+                        <div class="project-overlay absolute inset-0 bg-cyan-400 opacity-0 smooth-transition"></div>
+                    </div>
+                    <div class="p-3 sm:p-4 md:p-6">
+                        <h3 class="pixel-font text-cyan-400 text-sm sm:text-base md:text-lg mb-2 sm:mb-3">Reflet Beauté
+                        </h3>
+                        <p class="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
+
+
+
+
+
+                            I optimized the product SEO on RefletBeauté using Wix.
+                        </p>
+                        <div class="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
+                            <span class="pixel-font text-xs bg-purple-600 px-1 sm:px-2 py-1">Wix</span>
+
+
+                        </div>
+                        <a href="https://www.refletbeaute.com/">
+                            <button
+                                class="pixel-font text-xs sm:text-sm text-cyan-400 hover:text-white pixel-border border-cyan-400 hover:bg-cyan-400 hover:text-black px-3 sm:px-4 py-2 smooth-transition w-full focus-visible">
+                                SEE PROJECT>
+                            </button>
+                        </a>
+
+                    </div>
+                </article>
+                <article class="project-card bg-gray-900 pixel-border border-cyan-400 hover:border-purple-400
+                     smooth-transition pixel-shadow group cursor-pointer" data-category="web" tabindex="0"
+                    role="button" aria-label="Voir le projet  Website">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/images/Logo RJD Spices Vanilla-04.png" alt="Site web "
+                            class="project-image w-full h-32 sm:h-40 md:h-48 object-cover smooth-transition"
+                            loading="lazy">
+                        <div class="absolute top-2 sm:top-4 right-2 sm:right-4">
+                            <span class="pixel-font text-xs bg-yellow-500 text-black px-1 sm:px-2 py-1">In
+                                Progress</span>
+                        </div>
+                        <div class="project-overlay absolute inset-0 bg-cyan-400 opacity-0 smooth-transition"></div>
+                    </div>
+                    <div class="p-3 sm:p-4 md:p-6">
+                        <h3 class="pixel-font text-cyan-400 text-sm sm:text-base md:text-lg mb-2 sm:mb-3">RJD SPICES
+                            VANILLA
+                        </h3>
+                        <p class="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
+
+
+
+
+
+                            I developed the RJD Spices Vanilla showcase website on WordPress to promote vanilla
+                            products.
+                        </p>
+                        <div class="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
+                            <span class="pixel-font text-xs bg-purple-600 px-1 sm:px-2 py-1">WordPress</span>
+
+
+                        </div>
+                        <a href="https://www.rjdspicesvanilla.com/">
+                            <button
+                                class="pixel-font text-xs sm:text-sm text-cyan-400 hover:text-white pixel-border border-cyan-400 hover:bg-cyan-400 hover:text-black px-3 sm:px-4 py-2 smooth-transition w-full focus-visible">
+                                SEE PROJECT>
+                            </button>
+                        </a>
+
+                    </div>
+                </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- Projet 4 -->
+                <article
+                    class="project-card bg-gray-900 pixel-border border-cyan-400 hover:border-purple-400 smooth-transition pixel-shadow group cursor-pointer"
+                    data-category="web" tabindex="0" role="button" aria-label="Voir le projet Arcade UI">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/images/eddie.png" alt="site web"
+                            class="project-image w-full h-32 sm:h-40 md:h-48 object-cover smooth-transition"
+                            loading="lazy">
+                        <div class="absolute top-2 sm:top-4 right-2 sm:right-4">
+                            <span class="pixel-font text-xs bg-yellow-500 text-black px-1 sm:px-2 py-1">IN
+                                PROGRESS</span>
+                        </div>
+                        <div class="project-overlay absolute inset-0 bg-cyan-400 opacity-0 smooth-transition"></div>
+                    </div>
+                    <div class="p-3 sm:p-4 md:p-6">
+                        <h3 class="pixel-font text-cyan-400 text-sm sm:text-base md:text-lg mb-2 sm:mb-3">Eddie Fernand
+                        </h3>
+                        <p class="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Full-stack development
+                            of a complete website built from scratch with Laravel. Implemented backend logic, frontend
+                            integration, database design, and core feature development.</p>
+                        <div class="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
+                            <span class="pixel-font text-xs bg-purple-600 px-1 sm:px-2 py-1">Laravel</span>
+                            <span class="pixel-font text-xs bg-purple-600 px-1 sm:px-2 py-1">React js</span>
+                        </div>
+                        <button
+                            class="pixel-font text-xs sm:text-sm text-cyan-400 hover:text-white pixel-border border-cyan-400 hover:bg-cyan-400 hover:text-black px-3 sm:px-4 py-2 smooth-transition w-full focus-visible">
+                            SEE PROJECT>
+                        </button>
+                    </div>
+                </article>
+                <!-- Projet 4 -->
+                <article
+                    class="project-card bg-gray-900 pixel-border border-cyan-400 hover:border-purple-400 smooth-transition pixel-shadow group cursor-pointer"
+                    data-category="design" tabindex="0" role="button" aria-label="Voir le projet Arcade UI">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/images/fokotany.PNG" alt="Interface utilisateur style arcade"
+                            class="project-image w-full h-32 sm:h-40 md:h-48 object-cover smooth-transition"
+                            loading="lazy">
+                        <div class="absolute top-2 sm:top-4 right-2 sm:right-4">
+                            <span class="pixel-font text-xs bg-yellow-500 text-black px-1 sm:px-2 py-1">In
+                                progress</span>
+                        </div>
+                        <div class="project-overlay absolute inset-0 bg-cyan-400 opacity-0 smooth-transition"></div>
+                    </div>
+                    <div class="p-3 sm:p-4 md:p-6">
+                        <h3 class="pixel-font text-cyan-400 text-sm sm:text-base md:text-lg mb-2 sm:mb-3">FOKOTANY</h3>
+                        <p class="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">I created the UI/UX
+                            design for a Fokotany mobile application with Figma</p>
+                        <div class="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
+                            <span class="pixel-font text-xs bg-purple-600 px-1 sm:px-2 py-1">FIGMA</span>
+
+                        </div>
+                        <a
+                            href="https://www.figma.com/proto/hIKWjeJ3eh7lFEuAtZEvJ8/fonkotany?node-id=34-333&p=f&t=YHBNkld8N0gyEXj5-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=34%3A333&show-proto-sidebar=1">
+                            <button
+                                class="pixel-font text-xs sm:text-sm text-cyan-400 hover:text-white pixel-border border-cyan-400 hover:bg-cyan-400 hover:text-black px-3 sm:px-4 py-2 smooth-transition w-full focus-visible">
+                                SEE PROJECT >
+                            </button>
+                        </a>
+                    </div>
+                </article>
+
+
+
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center mt-8 sm:mt-12 md:mt-16">
+                <div
+                    class="bg-gradient-to-r from-cyan-400 to-purple-500 p-4 sm:p-6 md:p-8 pixel-border border-cyan-400 pixel-shadow max-w-4xl mx-auto">
+                    <h2 class="pixel-font text-sm sm:text-lg md:text-xl text-black mb-3 sm:mb-4">LET'S WORK TOGETHER
+                    </h2>
+                    <p class="text-black text-xs sm:text-sm mb-4 sm:mb-6 max-w-lg mx-auto">Ready to start your next
+                        project</p>
+                    <a href="mailto:wilfridndapa@gmail.com">
+
+                        <button
+                            class="pixel-font text-xs sm:text-sm bg-black text-cyan-400 hover:bg-cyan-400 hover:text-black px-4 sm:px-6 md:px-8 py-3 sm:py-4 pixel-border border-black hover:border-cyan-400 smooth-transition focus-visible">
+                            CONTACT ME >
+                        </button>
+                    </a>
+
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!--  
-    9 ) Javascript
-    - -->
+    <script>
+        // Système de filtrage
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Mise à jour des boutons actifs
+            buttons.forEach(btn => {
+                btn.classList.remove('neon-glow');
+                btn.classList.add('bg-gray-800');
+                btn.classList.remove('bg-cyan-400', 'text-black');
+            });
+
+            const activeBtn = document.querySelector(`[data-filter="${category}"]`);
+            activeBtn.classList.add('neon-glow', 'bg-cyan-400', 'text-black');
+            activeBtn.classList.remove('bg-gray-800');
+
+            // Animation de filtrage
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.5s ease-in-out';
+                } else {
+                    card.style.animation = 'fadeOut 0.3s ease-in-out';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // Animations CSS dynamiques
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            
+            @keyframes fadeOut {
+                from { opacity: 1; transform: translateY(0); }
+                to { opacity: 0; transform: translateY(-20px); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.6s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observer tous les éléments de projet
+        document.querySelectorAll('.project-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Effet de typing sur le titre
+        const title = document.querySelector('h1');
+        const text = title.textContent;
+        title.textContent = '';
+
+        let i = 0;
+        function typeWriter() {
+            if (i < text.length) {
+                title.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        // Démarre l'effet après un délai
+        setTimeout(typeWriter, 500);
+    </script>
 
 
-    <script type="text/javascript" src="assets/js/jquery-2.1.3.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/modernizr.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.easing.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.mixitup.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.popup.min.js"></script>
-    <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script type="text/javascript" src="assets/js/contact.js"></script>
-    <script type="text/javascript" src="assets/js/script.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+
+
+    <!-- Services Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-4xl text-gray-800 mb-6 pixel-font">
+                    MY SERVICES
+                </h2>
+                <div class="w-32 h-1 bg-gray-800 mx-auto mb-6"></div>
+                <p class="text-xs md:text-sm text-gray-600 max-w-2xl mx-auto leading-relaxed terminal-line">
+                    What I can build for you
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Service 1: Web Development -->
+                <div class="simple-card p-6">
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 border-2 border-gray-800 mr-4 bg-white flex items-center justify-center">
+                            <div class="w-4 h-4 bg-gray-800"></div>
+                        </div>
+                        <h3 class="text-sm text-gray-800 pixel-font">WEB DEV</h3>
+                    </div>
+                    <p class="text-xs text-gray-600 mb-6 leading-relaxed">
+                        Modern websites built with latest technologies and best practices.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-xs text-gray-500">
+                            <span class="w-3 h-0.5 bg-gray-500 mr-3 block"></span>
+                            REACT / LARAVEL / NEXT.JS
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <span class="w-3 h-0.5 bg-gray-500 mr-3 block"></span>
+                            RESPONSIVE DESIGN
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <span class="w-3 h-0.5 bg-gray-500 mr-3 block"></span>
+                            PERFORMANCE OPTIMIZATION
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: UI/UX Design -->
+                <div class="simple-card p-6">
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 border-2 border-gray-800 mr-4 bg-white flex items-center justify-center">
+                            <div class="w-4 h-4 bg-gray-800" style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%);">
+                            </div>
+                        </div>
+                        <h3 class="text-sm text-gray-800 pixel-font">UI/UX DESIGN</h3>
+                    </div>
+                    <p class="text-xs text-gray-600 mb-6 leading-relaxed">
+                        User-centered design that creates intuitive and engaging experiences.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-xs text-gray-500">
+                            <span class="w-3 h-0.5 bg-gray-500 mr-3 block"></span>
+                            WIREFRAMING
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <span class="w-3 h-0.5 bg-gray-500 mr-3 block"></span>
+                            PROTOTYPING
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <span class="w-3 h-0.5 bg-gray-500 mr-3 block"></span>
+                            USER TESTING
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Service 4: E-Commerce -->
+                <div class="simple-card p-6">
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 border-2 border-gray-800 mr-4 bg-white flex items-center justify-center">
+                            <div class="w-4 h-4 bg-gray-800"
+                                style="clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
+                        </div>
+                        <h3 class="text-sm text-gray-800 pixel-font">E-COMMERCE</h3>
+                    </div>
+                    <p class="text-xs text-gray-600 mb-6 leading-relaxed">
+                        Complete online stores with payment processing and inventory management.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-xs text-gray-500">
+                            <span class="w-3 h-0.5 bg-gray-500 mr-3 block"></span>
+                            SHOPIFY / WOOCOMMERCE
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <span class="w-3 h-0.5 bg-gray-500 mr-3 block"></span>
+                            PAYMENT GATEWAY
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <span class="w-3 h-0.5 bg-gray-500 mr-3 block"></span>
+                            INVENTORY SYSTEM
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5: SEO & Analytics -->
+                <div class="simple-card p-6">
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 border-2 border-gray-800 mr-4 bg-white flex items-center justify-center">
+                            <div class="w-4 h-4 bg-gray-800"
+                                style="clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);"></div>
+                        </div>
+                        <h3 class="text-sm text-gray-800 pixel-font">SEO & ANALYTICS</h3>
+                    </div>
+                    <p class="text-xs text-gray-600 mb-6 leading-relaxed">
+                        Search engine optimization and performance tracking for better visibility.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-xs text-gray-500">
+                            <span class="w-3 h-0.5 bg-gray-500 mr-3 block"></span>
+                            TECHNICAL AUDIT
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <span class="w-3 h-0.5 bg-gray-500 mr-3 block"></span>
+                            KEYWORD RESEARCH
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <span class="w-3 h-0.5 bg-gray-500 mr-3 block"></span>
+                            ANALYTICS SETUP
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 6: Maintenance -->
+                <div class="simple-card p-6">
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 border-2 border-gray-800 mr-4 bg-white flex items-center justify-center">
+                            <div class="w-4 h-4 bg-gray-800"
+                                style="clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%);"></div>
+                        </div>
+                        <h3 class="text-sm text-gray-800 pixel-font">MAINTENANCE</h3>
+                    </div>
+                    <p class="text-xs text-gray-600 mb-6 leading-relaxed">
+                        Ongoing support and maintenance to keep your projects running smoothly.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-xs text-gray-500">
+                            <span class="w-3 h-0.5 bg-gray-500 mr-3 block"></span>
+                            REGULAR UPDATES
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <span class="w-3 h-0.5 bg-gray-500 mr-3 block"></span>
+                            SECURITY MONITORING
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <span class="w-3 h-0.5 bg-gray-500 mr-3 block"></span>
+                            BACKUP SYSTEMS
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-8 sm:mt-12 md:mt-16">
+
+                <!-- Enhanced Social links -->
+                <div class="flex justify-center gap-6 animate-slideUp" style="animation-delay: 1.4s;">
+
+                    <a href="https://www.linkedin.com/in/wilfrid-ndapa-7a2558251"
+                        class="group w-14 h-14 glass-effect neo-border rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:rotate-6">
+                        <svg class="w-6 h-6 text-gray-400 group-hover:text-blue-400 transition-colors"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+
+                    <a href="https://github.com/WilfridNDAPA"
+                        class="group w-14 h-14 glass-effect neo-border rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:rotate-6">
+                        <svg class="w-6 h-6 text-gray-400 group-hover:text-purple-400 transition-colors"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+
+                    <a href="mailto:wilfridndapa@gmail.com"
+                        class="group w-14 h-14 glass-effect neo-border rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:rotate-6">
+                        <svg class="w-6 h-6 text-gray-400 group-hover:text-pink-400 transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Pixel Font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        .pixel-font {
+            font-family: 'Press Start 2P', cursive;
+        }
+    </style>
+
+
+    <!-- Optional Pixel Font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        .pixel-font {
+            font-family: 'Press Start 2P', cursive;
+        }
+    </style>
+
+
 </body>
 
 </html>
