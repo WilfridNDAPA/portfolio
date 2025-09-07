@@ -402,3 +402,9 @@ body {
   content: "> ";
   color: #4a5568;
 }
+html {
+  scroll-behavior: smooth;
+}
+body {
+  scroll-behavior: smooth;
+}
